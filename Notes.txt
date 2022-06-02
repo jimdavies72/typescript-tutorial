@@ -1,0 +1,42 @@
+1) Installing TypeScript:
+
+  npm i -g typescript
+
+2) Verify installation (TypeScript Compiler):
+
+  tsc -V
+
+3) Configuring TypeScript Compiler
+
+  tsc --init  //*  creates tsconfig.json configutation file
+
+  set target prop to required JavaScript version (e.g. ES6)
+
+  uncomment rootDir prop and set to  "./src"
+  uncomment outDir prop and set to  "./dist"
+
+  uncomment removeComments prop
+
+  uncomment noEmitOnError prop (no compilation on error)
+
+  uncomment sourceMap prop (creates filename.js.map file)
+
+  // For finding errors in functions...
+  uncomment "noUnusedParameters": true prop
+  uncomment "noImplicitReturns": true
+  "noUnusedLocals": true
+
+4) Debugging
+
+  ensure filename.js.map file(s) are created
+  set breakpoint on first line of code
+  open debug panel and select 'create a launch.json file'
+    -- (select node.js)
+  add "preLaunchTask": "tsc: build - tsconfig.json", (under program setting)
+
+  click debug panel
+  F5 - start Debugging
+  F10 - step over line
+  F11 - step into funciton
+
+  add watch of variables in left panel
